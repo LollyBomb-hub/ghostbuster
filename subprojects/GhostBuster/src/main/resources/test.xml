@@ -1,0 +1,37 @@
+<GhostBuster template="C:\documents_dev\attachment\Blank_A4.jrxml">
+    <Styles>
+        <Style headerDefault="true">
+            <BackgroundColor>#FFFFFF</BackgroundColor>
+            <ForeColor>#000000</ForeColor>
+        </Style>
+        <Style contentDefault="true">
+            <BackgroundColor>#FFFFFF</BackgroundColor>
+            <ForeColor>#000000</ForeColor>
+        </Style>
+        <Style name="For product">
+            <BackgroundColor>#FFFFFF</BackgroundColor>
+            <ForeColor>#000000</ForeColor>
+        </Style>
+    </Styles>
+    <Layout totalWidth="800">
+        <Column width="70%"/>
+        <Column/>
+    </Layout>
+    <Table>
+        <Headers>
+            <Header>Наименование</Header>
+            <Header>Сумма</Header>
+        </Headers>
+        <Row condition="#category_id != null and #products != null">
+            <Cell colspan="2">${#main_category_name}</Cell>
+        </Row>
+        <Row condition="#product_id != null">
+            <Cell>${#product_name}</Cell>
+            <Cell>0</Cell>
+        </Row>
+        <Row condition="#instance_id != null">
+            <Cell>${"Экземпляр: " + #instance_name_or_code.getScalar().getValue()}</Cell>
+            <Cell>0</Cell>
+        </Row>
+    </Table>
+</GhostBuster>

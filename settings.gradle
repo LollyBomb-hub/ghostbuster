@@ -1,0 +1,12 @@
+rootProject.name = 'GhostBuster'
+
+include(
+        "subprojects/GhostBuster",
+        "subprojects/JasperCompability"
+)
+
+rootProject.children.forEach { project ->
+    String name = project.projectDir.name
+    project.name = name
+    project.buildFileName = name + ".build.gradle"
+}

@@ -1,0 +1,24 @@
+subprojects {
+    group 'ru.council.libs'
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven {
+            url "https://git-new.council.ru/api/v4/projects/34/packages/maven"
+            name "GitLab"
+            credentials(HttpHeaderCredentials) {
+                name = "Private-Token"
+                value = System.getenv("LIBS_PACKAGES_READ_TOKEN")
+            }
+            authentication {
+                header(HttpHeaderAuthentication)
+            }
+        }
+    }
+
+    apply plugin: "java-library"
+    apply plugin: "maven-publish"
+
+    publish
+}

@@ -1,0 +1,6 @@
+subprojects/JasperCompability/src/test
+subprojects/GhostBuster/src/test
+.gradle
+.idea
+/build/
+subprojects/**/build
