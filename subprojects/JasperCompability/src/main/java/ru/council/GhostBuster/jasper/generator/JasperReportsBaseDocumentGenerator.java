@@ -122,8 +122,6 @@ public class JasperReportsBaseDocumentGenerator {
 
         ((JRDesignSection) design.getDetailSection()).addBand(inclusionFromGhostBuster);
 
-        JRXmlWriter.writeReport(design, "C:\\documents_dev\\test.jrxml", "UTF-8");
-
         JasperReport jasperReport = compileJasperDesign(design);
 
         log.info("Spent on getting template {} - {} millis", inclusionFromGhostBuster, (System.currentTimeMillis() - time));
